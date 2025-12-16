@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axwork | Smart Tech Solutions Rwanda</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        :root {
+            --primary: #00a8ff;
+            --dark: #1a1a2e;
+            --light: #f8f9fa;
+            --gray: #6c757d;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--dark) 0%, #16213e 100%);
+            color: white;
+            padding: 80px 0 60px;
+            text-align: center;
+            border-bottom-left-radius: 30px;
+            border-bottom-right-radius: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .logo {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+        
+        .logo span {
+            color: var(--primary);
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: #ccc;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 14px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: 2px solid var(--primary);
+            margin-top: 20px;
+        }
+        
+        .cta-button:hover {
+            background: transparent;
+            color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 168, 255, 0.2);
+        }
+        
+        /* Services */
+        .section-title {
+            text-align: center;
+            margin: 60px 0 40px;
+            font-size: 2.2rem;
+            color: var(--dark);
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background: var(--primary);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 5px solid var(--primary);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .service-card h3 {
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        /* Mission */
+        .mission {
+            background: var(--dark);
+            color: white;
+            padding: 60px 0;
+            border-radius: 20px;
+            margin: 60px 0;
+            text-align: center;
+        }
+        
+        .mission h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .mission p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            color: #ddd;
+        }
+        
+        /* Contact */
+        .contact-info {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            margin-bottom: 60px;
+            text-align: center;
+        }
+        
+        .contact-info h2 {
+            margin-bottom: 30px;
+            color: var(--dark);
+        }
+        
+        .contact-details {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .contact-item i {
+            color: var(--primary);
+            font-size: 1.3rem;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: #aaa;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 60px;
+            border-top-left-radius: 30px;
+            border-top-right-radius: 30px;
+        }
+        
+        .social-links {
+            margin: 20px 0;
+        }
+        
+        .social-links a {
+            display: inline-block;
+            color: white;
+            background: rgba(255, 255, 255, 0.1);
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            border-radius: 50%;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background: var(--primary);
+            transform: translateY(-5px);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .logo { font-size: 2.2rem; }
+            .section-title { font-size: 1.8rem; }
+            .service-card { padding: 25px; }
+            .contact-details { flex-direction: column; align-items: center; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">AX<span>WORK</span></div>
+            <p class="tagline">Smart, affordable tech solutions for Rwandan businesses & students</p>
+            <p class="tagline">Turning complex problems into simple, elegant results</p>
+            <a href="#contact" class="cta-button">Start Your Project</a>
+        </div>
+    </header>
+
+    <!-- Services -->
+    <div class="container">
+        <h2 class="section-title">Our Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-laptop-code"></i>
+                </div>
+                <h3>Professional Website Development</h3>
+                <p>Mobile-friendly, fast, and professional websites that help Rwandan businesses attract customers online.</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-mobile-alt"></i>
+                </div>
+                <h3>Mobile App MVP Development</h3>
+                <p>Build the first version of your app idea to test the market and attract investors.</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h3>Data Analysis & Visualization</h3>
+                <p>Transform your business data into clear, actionable insights with beautiful dashboards.</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-bullhorn"></i>
+                </div>
+                <h3>Digital Marketing</h3>
+                <p>Get your business seen online with targeted social media and SEO strategies.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mission -->
+    <div class="container">
+        <div class="mission">
+            <h2>Our Mission</h2>
+            <p>Axwork empowers Rwandan businesses and students with smart, affordable tech solutions—turning complex problems into simple, elegant results. We believe in the power of technology to drive Rwanda's growth.</p>
+        </div>
+    </div>
+
+    <!-- Contact -->
+    <div class="container">
+        <div class="contact-info" id="contact">
+            <h2>Ready to Build Something Amazing?</h2>
+            <p>Contact us for a free consultation on your project.</p>
+            
+            <div class="contact-details">
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Kigali, Rwanda</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span id="email">axwork.rw@gmail.com</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span id="phone">+250 [Your Number]</span>
+                </div>
+            </div>
+            
+            <a href="mailto:axwork.rw@gmail.com" class="cta-button" style="margin-top: 30px;">
+                <i class="fas fa-paper-plane"></i> Send Message
+            </a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+            <p>© 2023 <strong>Axwork</strong>. Built with passion in Rwanda.</p>
+            <p style="margin-top: 10px; font-size: 0.9em;">Website Development | Mobile Apps | Data Analysis | Digital Marketing</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple email protection (optional)
+        document.addEventListener('DOMContentLoaded', function() {
+            // You can add interactivity here later
+            console.log('Axwork Portfolio Loaded!');
+        });
+    </script>
+</body>
+</html>
